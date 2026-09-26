@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PwC DE&amp;AA — 1-Day Interview Prep Kit | Mahalaxmi</title>
+<style>
+  :root{
+    --orange:#E8590C; --orange-soft:#FFE8D9; --aubergine:#4C1D5B; --aubergine-2:#31103E;
+    --ink:#1E1B24; --muted:#6B6475; --bg:#F7F5F9; --card:#FFFFFF;
+    --green:#12805C; --green-soft:#E3F6EE; --amber:#B45309; --amber-soft:#FEF3C7;
+    --red:#C2410C; --red-soft:#FFE4E0; --blue:#1D4ED8; --blue-soft:#E0EAFF;
+    --radius:16px; --shadow:0 6px 24px rgba(49,16,62,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:76px;}
+  body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65; font-size:16.5px;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky; top:0; z-index:50; background:rgba(49,16,62,.97); backdrop-filter:blur(8px);
+    box-shadow:0 2px 12px rgba(0,0,0,.25);}
+  nav .wrap{display:flex; align-items:center; gap:6px; overflow-x:auto; padding:10px 20px;}
+  nav .brand{font-weight:800; color:#fff; white-space:nowrap; margin-right:10px; font-size:15px;}
+  nav .brand span{color:#FF9B57;}
+  nav a{color:#E9D5F3; text-decoration:none; font-size:13.5px; font-weight:600; padding:7px 12px;
+    border-radius:999px; white-space:nowrap; transition:.15s;}
+  nav a:hover{background:rgba(255,255,255,.14); color:#fff;}
+
+  /* ---------- HERO ---------- */
+  header.hero{background:linear-gradient(135deg,var(--aubergine-2) 0%,var(--aubergine) 55%,#7A2E12 130%);
+    color:#fff; padding:52px 0 46px; position:relative; overflow:hidden;}
+  header.hero::after{content:""; position:absolute; right:-90px; top:-90px; width:320px; height:320px;
+    border-radius:50%; background:radial-gradient(circle,rgba(232,89,12,.45),transparent 65%);}
+  .hero-grid{display:flex; gap:36px; align-items:center; justify-content:space-between; position:relative; z-index:1; flex-wrap:wrap;}
+  .hero h1{font-size:clamp(26px,4.5vw,38px); line-height:1.2; font-weight:850; letter-spacing:-.5px;}
+  .hero h1 em{font-style:normal; color:#FF9B57;}
+  .hero .sub{color:#E9D5F3; margin-top:10px; font-size:16px; max-width:520px;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+  .chip{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); padding:5px 12px;
+    border-radius:999px; font-size:13px; font-weight:600;}
+  .chip.ok{background:rgba(18,128,92,.35); border-color:rgba(120,230,190,.5);}
+  .chip.warn{background:rgba(180,83,9,.4); border-color:rgba(255,200,120,.5);}
+  .scorebox{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:24px;
+    padding:22px 28px; text-align:center; min-width:230px;}
+  .scorebox .label{font-size:12.5px; text-transform:uppercase; letter-spacing:1.5px; color:#E9D5F3; font-weight:700;}
+  .donut{position:relative; width:150px; height:150px; margin:8px auto 4px;}
+  .donut svg{transform:rotate(-90deg);}
+  .donut .num{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+  .donut .num b{font-size:40px; font-weight:850; line-height:1;}
+  .donut .num small{font-size:13px; color:#E9D5F3;}
+  .scorebox .verdict{font-size:13.5px; color:#FFD9BF; font-weight:600; margin-top:6px;}
+
+  /* ---------- ALERT ---------- */
+  .alert{background:linear-gradient(90deg,#FFF7ED,#FFE4E0); border:1.5px solid #FDBA8D; border-radius:var(--radius);
+    padding:16px 20px; margin:24px auto; display:flex; gap:14px; align-items:flex-start; box-shadow:var(--shadow);}
+  .alert .ico{font-size:22px; line-height:1.2;}
+  .alert h3{font-size:15.5px; color:#9A3412; margin-bottom:4px;}
+  .alert p{font-size:14.5px; color:#7C2D12;}
+  #countdown{font-weight:800; font-variant-numeric:tabular-nums;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:40px 0 8px;}
+  .sec-head{display:flex; align-items:center; gap:12px; margin-bottom:8px;}
+  .sec-num{background:var(--aubergine); color:#fff; font-weight:800; font-size:14px; width:34px; height:34px;
+    border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  h2{font-size:clamp(21px,3vw,26px); font-weight:800; letter-spacing:-.3px; color:var(--aubergine-2);}
+  .lead{color:var(--muted); font-size:15.5px; margin-bottom:20px; max-width:760px;}
+
+  .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; margin-bottom:18px;
+    border:1px solid #EEE9F2;}
+  h3.blk{font-size:17px; font-weight:800; color:var(--aubergine); margin-bottom:12px;}
+  h4.blk{font-size:15px; font-weight:750; color:var(--ink); margin:16px 0 8px;}
+
+  /* tables */
+  .tbl-scroll{overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  th{background:var(--aubergine); color:#fff; text-align:left; padding:10px 12px; font-size:13px; letter-spacing:.3px;}
+  td{padding:10px 12px; border-bottom:1px solid #EDE8F1; vertical-align:top;}
+  tr:nth-child(even) td{background:#FBFAFD;}
+  .sc{font-weight:800; white-space:nowrap;}
+  .sc.good{color:var(--green);} .sc.mid{color:var(--amber);} .sc.bad{color:var(--red);}
+  td small{color:var(--muted);}
+
+  /* lists */
+  ul.ticks{list-style:none;}
+  ul.ticks li{padding-left:28px; position:relative; margin-bottom:9px; font-size:15px;}
+  ul.ticks li::before{position:absolute; left:0; top:0; font-weight:800;}
+  ul.good li::before{content:"✅"; }
+  ul.bad li::before{content:"⚠️";}
+  ul.num{list-style:none; counter-reset:n;}
+  ul.num li{counter-increment:n; padding-left:34px; position:relative; margin-bottom:10px; font-size:15px;}
+  ul.num li::before{content:counter(n); position:absolute; left:0; top:1px; background:var(--orange); color:#fff;
+    width:22px; height:22px; border-radius:7px; font-size:12.5px; font-weight:800; display:flex; align-items:center; justify-content:center;}
+
+  /* story block */
+  .quote{background:linear-gradient(135deg,#FFF7ED,#F5EEF9); border-left:5px solid var(--orange);
+    padding:18px 20px; border-radius:0 14px 14px 0; font-size:16.5px; font-weight:600; color:#3D2B45;}
+
+  /* ---------- ONE DAY PLAN ---------- */
+  .priority{background:linear-gradient(135deg,#4C1D5B,#31103E); color:#fff; border-radius:var(--radius);
+    padding:22px 24px; margin-bottom:18px; box-shadow:var(--shadow);}
+  .priority h3{color:#FF9B57; font-size:16.5px; margin-bottom:12px;}
+  .priority ol{margin-left:20px; font-size:15px;}
+  .priority li{margin-bottom:8px;}
+  .progress-wrap{background:#EDE8F1; border-radius:999px; height:12px; overflow:hidden; margin:6px 0 18px;}
+  .progress-bar{height:100%; width:0%; background:linear-gradient(90deg,var(--orange),#F59E0B); border-radius:999px; transition:width .35s;}
+  .progress-label{font-size:13.5px; color:var(--muted); font-weight:600; margin-bottom:16px; display:flex; justify-content:space-between;}
+  .tl{position:relative; padding-left:30px;}
+  .tl::before{content:""; position:absolute; left:9px; top:6px; bottom:6px; width:3px; background:#E4DCEE; border-radius:3px;}
+  .slot{position:relative; background:var(--card); border:1px solid #EEE9F2; border-radius:14px;
+    padding:16px 18px 16px 16px; margin-bottom:14px; box-shadow:0 3px 12px rgba(49,16,62,.05);}
+  .slot::before{content:""; position:absolute; left:-27px; top:22px; width:13px; height:13px; border-radius:50%;
+    background:#fff; border:3.5px solid var(--orange);}
+  .slot.done{opacity:.62; background:#F3FBF7; border-color:#BFE8D6;}
+  .slot.done::before{border-color:var(--green);}
+  .slot-top{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;}
+  .time{background:var(--aubergine); color:#fff; font-size:12.5px; font-weight:800; padding:3px 10px; border-radius:999px;
+    font-variant-numeric:tabular-nums;}
+  .slot h4{font-size:16px; font-weight:800;}
+  .tag{font-size:11.5px; font-weight:800; padding:2.5px 9px; border-radius:999px; text-transform:uppercase; letter-spacing:.5px;}
+  .tag.must{background:var(--red-soft); color:var(--red);}
+  .tag.high{background:var(--amber-soft); color:var(--amber);}
+  .tag.med{background:var(--blue-soft); color:var(--blue);}
+  .tag.break{background:var(--green-soft); color:var(--green);}
+  .slot ul{list-style:none; margin-top:6px;}
+  .slot ul li{font-size:14.5px; padding-left:18px; position:relative; margin-bottom:5px; color:#3E3949;}
+  .slot ul li::before{content:"→"; position:absolute; left:0; color:var(--orange); font-weight:800;}
+  .slot label.ck{display:flex; gap:10px; align-items:flex-start; cursor:pointer; margin-top:10px;
+    background:#F6F2FA; border-radius:10px; padding:9px 12px; font-size:14px; font-weight:650; color:var(--aubergine);}
+  .slot label.ck input{margin-top:3px; accent-color:var(--green); width:16px; height:16px;}
+
+  /* ---------- Q&A ---------- */
+  .qa-tools{display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .qa-tools button{border:1.5px solid var(--aubergine); background:#fff; color:var(--aubergine); font-weight:700;
+    font-size:13.5px; padding:7px 15px; border-radius:999px; cursor:pointer;}
+  .qa-tools button:hover{background:var(--aubergine); color:#fff;}
+  .qgroup{margin-bottom:26px;}
+  .qgroup>h3{font-size:16.5px; font-weight:850; color:var(--aubergine); margin:18px 0 10px;
+    display:flex; align-items:center; gap:9px;}
+  .qgroup>h3 .cnt{background:var(--orange-soft); color:var(--orange); font-size:12px; padding:2px 9px; border-radius:999px; font-weight:800;}
+  details.q{background:var(--card); border:1px solid #EEE9F2; border-radius:13px; margin-bottom:10px;
+    box-shadow:0 3px 10px rgba(49,16,62,.05); overflow:hidden;}
+  details.q summary{list-style:none; cursor:pointer; padding:14px 18px; font-weight:750; font-size:15.5px;
+    display:flex; gap:11px; align-items:flex-start; user-select:none;}
+  details.q summary::-webkit-details-marker{display:none;}
+  details.q summary .qn{background:linear-gradient(135deg,var(--aubergine),#7A2E12); color:#fff; font-size:11.5px;
+    font-weight:800; min-width:30px; height:24px; border-radius:7px; display:flex; align-items:center; justify-content:center; margin-top:2px;}
+  details.q summary .caret{margin-left:auto; color:var(--muted); transition:transform .2s; font-size:13px;}
+  details.q[open] summary .caret{transform:rotate(180deg);}
+  details.q[open] summary{border-bottom:1px solid #F0EBF4; background:#FBFAFD;}
+  .ans{padding:16px 18px 18px; font-size:15.3px;}
+  .ans p{margin-bottom:10px;}
+  .ans .tip{background:var(--green-soft); border-left:4px solid var(--green); padding:10px 14px; border-radius:0 10px 10px 0;
+    font-size:14.5px; margin-top:10px;}
+  .ans .tip b{color:var(--green);}
+  .ans ol,.ans ul{margin:8px 0 10px 22px;}
+  .ans ol li,.ans ul li{margin-bottom:6px;}
+  pre{background:#251233; color:#E9DFF2; padding:15px 17px; border-radius:12px; overflow-x:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13.8px; line-height:1.6; margin:10px 0; position:relative;}
+  pre .kw{color:#FF9B57;} pre .str{color:#9EE7C5;} pre .cm{color:#9D8FB0; font-style:italic;}
+  .copy{position:absolute; top:8px; right:8px; background:rgba(255,255,255,.12); color:#fff; border:none;
+    font-size:11.5px; font-weight:700; padding:4px 10px; border-radius:7px; cursor:pointer;}
+  .copy:hover{background:rgba(255,255,255,.25);}
+  code.inl{background:#F1ECF6; color:var(--aubergine); padding:1.5px 7px; border-radius:6px; font-size:14px;
+    font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:650;}
+
+  /* ---------- CHEAT SHEET ---------- */
+  .cheat{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px;}
+  .word{background:var(--card); border:1px solid #EEE9F2; border-radius:13px; padding:15px 16px; box-shadow:0 3px 10px rgba(49,16,62,.05);}
+  .word b{display:block; color:var(--orange); font-size:15.5px; margin-bottom:5px;}
+  .word span{font-size:14.3px; color:#4A4456;}
+
+  /* ---------- CHECKLIST ---------- */
+  .ck-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px;}
+  .ck-list{background:var(--card); border:1px solid #EEE9F2; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);}
+  .ck-list h4{font-size:15.5px; font-weight:800; color:var(--aubergine); margin-bottom:12px;}
+  .ck-list label{display:flex; gap:10px; align-items:flex-start; font-size:14.6px; margin-bottom:10px; cursor:pointer;}
+  .ck-list label input{margin-top:4px; accent-color:var(--orange); width:16px; height:16px; flex-shrink:0;}
+  .rules{background:linear-gradient(135deg,#31103E,#4C1D5B); color:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow);}
+  .rules h4{color:#FF9B57; font-size:16px; margin-bottom:14px;}
+  .rules ol{margin-left:20px; font-size:15px;} .rules ol li{margin-bottom:11px;}
+  .rules .script{background:rgba(255,255,255,.1); border:1px dashed rgba(255,255,255,.35); padding:12px 15px;
+    border-radius:11px; font-style:italic; margin:8px 0 14px; font-size:14.7px;}
+  .pocket{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; margin-top:16px;}
+  .pocket div{background:#FFF7ED; border:1px solid #FDBA8D; border-radius:12px; padding:13px 16px; font-size:14.5px; font-weight:650; color:#7C2D12;}
+  .pocket div b{display:block; font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:4px;}
+
+  footer{background:var(--aubergine-2); color:#C9AED8; text-align:center; padding:30px 20px; margin-top:46px; font-size:14px;}
+  footer b{color:#FF9B57;}
+
+  @media(max-width:640px){
+    body{font-size:15.8px;}
+    .scorebox{min-width:0; width:100%;}
+    .hero-grid{flex-direction:column; align-items:stretch;}
+    .card{padding:18px;}
+    pre{font-size:12.8px;}
+  }
+  @media print{
+    nav,.qa-tools,.copy{display:none!important;}
+    details.q{break-inside:avoid;} details.q[open]{border:1px solid #ccc;}
+    body{background:#fff;} .slot::before{display:none;} .tl::before{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">PwC <span>DE&amp;AA</span> Prep Kit</div>
+    <a href="#score">Fit Score</a>
+    <a href="#story">Your Story</a>
+    <a href="#plan">1-Day Plan</a>
+    <a href="#qa">Q&amp;A Bank</a>
+    <a href="#cheat">Cheat Sheet</a>
+    <a href="#checklist">Checklist</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Interview Prep Kit —<br><em>Data Engineering &amp; Analytics Associate</em></h1>
+      <p class="sub">Senior-recruiter review of your resume against the PwC AC India JD, with a realistic
+      <b>hour-by-hour plan for your ONE day of preparation</b>, a 45-question answer bank in simple language, and a last-24-hours checklist.</p>
+      <div class="chips">
+        <span class="chip ok">✓ ECE — eligible branch</span>
+        <span class="chip ok">✓ CGPA 8.29 &gt; 60%</span>
+        <span class="chip ok">✓ GenAI project (RAG)</span>
+        <span class="chip warn">⚠ SQL = paper only</span>
+        <span class="chip warn">⚠ No ETL/pipeline words yet</span>
+      </div>
+    </div>
+    <div class="scorebox">
+      <div class="label">Recruiter Fit Score</div>
+      <div class="donut">
+        <svg width="150" height="150" viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="58" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="13"/>
+          <circle cx="75" cy="75" r="58" fill="none" stroke="#FF9B57" stroke-width="13" stroke-linecap="round"
+                  stroke-dasharray="364.4" stroke-dashoffset="102"/>
+        </svg>
+        <div class="num"><b>72</b><small>out of 100</small></div>
+      </div>
+      <div class="verdict">"Shortlist her — with solid prep<br>she lands at 78–82."</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="alert">
+    <div class="ico">⏰</div>
+    <div>
+      <h3>Registration closes 10:00 AM, 23/09/2026 — <span id="countdown">calculating…</span></h3>
+      <p>Name exactly as per PAN card · no last name → enter a <b>full stop (.)</b>, never "NA" ·
+      CGPA <b>8.29</b> exactly, no rounding (XII: 98.6%) · do not forward the notice to anyone outside the group.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SCORE ===================== -->
+<section id="score"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">1</div><h2>Fit Score Breakdown — 72/100</h2></div>
+  <p class="lead">Honest recruiter reading of your resume (Karnati Mahalaxmi, B.Tech ECE, NIT Trichy) against the
+  PwC Technology Consulting Intern / DE&amp;AA job description. You are not a weak candidate — you're an
+  <b>unfamiliar-shaped</b> one. The gaps below are closable in one focused day.</p>
+
+  <div class="card">
+    <div class="tbl-scroll">
+    <table>
+      <tr><th style="width:34px">#</th><th>Criteria</th><th style="width:70px">Weight</th><th style="width:70px">Score</th><th>Recruiter comment</th></tr>
+      <tr><td>1</td><td><b>Eligibility</b> (branch, %, backlogs)</td><td>15</td><td class="sc good">15</td><td>ECE = approved circuit branch. 8.29 ≫ 60%. No backlogs shown. Full marks. <small></small></td></tr>
+      <tr><td>2</td><td><b>Programming</b> (Python)</td><td>15</td><td class="sc good">11</td><td>Real proof: churn project + Flask + RAG chatbot. Depth (functions, errors, files) is untested — that's the interview risk.</td></tr>
+      <tr><td>3</td><td><b>Data &amp; Analytics</b> (SQL, Pandas)</td><td>20</td><td class="sc mid">13</td><td>Strong Pandas/NumPy + 97.51% model. Weak: SQL is listed with no project behind it.</td></tr>
+      <tr><td>4</td><td><b>GenAI knowledge</b></td><td>10</td><td class="sc good">8</td><td>JD asks "GenAI Basics" — you built a RAG chatbot. Rare advantage over other ECE applicants.</td></tr>
+      <tr><td>5</td><td><b>Big Data / DE tooling</b></td><td>10</td><td class="sc bad">3</td><td>Biggest gap: no Spark/Airflow/cloud/ETL words. Learn the vocabulary (Cheat Sheet) even without tools.</td></tr>
+      <tr><td>6</td><td><b>Communication &amp; storytelling</b></td><td>15</td><td class="sc good">13</td><td>Head, Guest Lectures + 2× Workshop Manager + TI WiSH 1st place. JD explicitly wants this.</td></tr>
+      <tr><td>7</td><td><b>Domain / business sense</b></td><td>5</td><td class="sc mid">3</td><td>Churn project is business-flavoured, but resume doesn't frame it as business impact.</td></tr>
+      <tr><td>8</td><td><b>Resume presentation</b></td><td>10</td><td class="sc mid">6</td><td>Reads like an ECE resume with two data projects added. No summary line, small typos.</td></tr>
+      <tr><td colspan="2"><b>TOTAL</b></td><td><b>100</b></td><td class="sc good"><b>72</b></td><td><b>Shortlist-worthy today; 78–82 after resume fixes + strong interview.</b></td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">✅ What is working FOR you</h3>
+    <ul class="ticks good">
+      <li><b>You're officially eligible</b> — ECE is on their branch list, CGPA way above 60%. Many applicants fail right here; you don't.</li>
+      <li><b>Projects match the JD line-by-line:</b> "Python" → churn model (Pandas, XGBoost, Flask) · "GenAI Basics" → RAG chatbot (embeddings, FAISS) · "familiarity with data technologies" → 5,630 records, preprocessing, model comparison.</li>
+      <li><b>DRDL internship</b> — defence lab + MATLAB + FPGA says you can handle serious technical work.</li>
+      <li><b>Leadership + communication</b> — 1,500-student workshops, external HR coordination, won 1st place in TI design-thinking contest.</li>
+    </ul>
+    <h3 class="blk" style="margin-top:18px;">⚠️ What is working AGAINST you</h3>
+    <ul class="ticks bad">
+      <li><b>SQL is on paper only.</b> One JOIN query on a board and the resume takes damage. Fix: 6 queries cold (in Q16–Q21).</li>
+      <li><b>No data-engineering vocabulary</b> — the role name has "Data <i>Engineering</i>". Know ETL, pipeline, warehouse, big data (Cheat Sheet).</li>
+      <li><b>"Why ECE → IT?" WILL be asked.</b> Answer it with confidence and it becomes your story (Section 2). Answer it awkwardly and they doubt your commitment.</li>
+      <li><b>Resume nits:</b> <code class="inl">Python,C++</code> · <code class="inl">end -to-end</code> · no summary line · no GitHub links · no numbers in leadership roles.</li>
+    </ul>
+    <h4 class="blk">🔧 Resume fixes — do these first thing tomorrow morning (30 min)</h4>
+    <ul class="ticks">
+      <li><b>Add a summary line</b> under your name: <i>"B.Tech ECE, NIT Trichy (CGPA 8.29) | Python, SQL, Pandas | Data Analytics &amp; GenAI projects: Churn Prediction (97.5% acc) &amp; RAG Chatbot | DRDL Summer Intern"</i> — puts JD keywords on line 1.</li>
+      <li>Fix typos: <code class="inl">Python, C++</code> · <code class="inl">end-to-end</code>.</li>
+      <li>Add GitHub links for the two projects (if repos exist).</li>
+      <li>Use <b>8.29</b> and <b>98.6%</b> exactly — no rounding, per the notice.</li>
+      <li>Only add numbers to leadership roles if they're true (e.g. "8+ guest lectures").</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ===================== STORY ===================== -->
+<section id="story"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">2</div><h2>Your One-Line Positioning Story</h2></div>
+  <p class="lead">Memorize this. It single-handedly answers 5 questions: <i>Why this role? Why leave VLSI? Why you?
+  Why should we hire an ECE student? Where do you see yourself going?</i></p>
+  <div class="quote">
+    "I'm an ECE student who fell in love with systems — first hardware, now data. In VLSI I learned to take a
+    messy input, run it through, find what's wrong and fix it. Data work is the same game with faster feedback.
+    So I taught myself Python, built a churn model at 97.5% accuracy and a GenAI chatbot on my own — and now I
+    want to do that with real clients at PwC."
+  </div>
+  <div class="card" style="margin-top:16px;">
+    <h3 class="blk">Why this works</h3>
+    <ul class="ticks">
+      <li>Turns your "weakness" (not from IT) into <b>proof that you learn by yourself</b> — exactly what a 6-month intern must do.</li>
+      <li>Shows numbers (97.5%) — recruiters remember digits.</li>
+      <li>Ends on PwC — always land the answer on <i>them</i>, not on you.</li>
+    </ul>
+    <h4 class="blk">Three stories to reuse across 10 behavioral questions:</h4>
+    <ul class="num">
+      <li><b>Technical stuck-point → systematic fix</b> (DRDL simulation mismatch, or churn model iteration).</li>
+      <li><b>Coordination crisis → event saved</b> (Pragyan/Probe speaker cancellation, backup arranged).</li>
+      <li><b>Self-taught something hard → built proof</b> (FLASK + FAISS for the chatbot, nobody taught you).</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ===================== 1-DAY PLAN ===================== -->
+<section id="plan"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">3</div><h2>The ONE-DAY Prep Plan (D-1)</h2></div>
+  <p class="lead">You have <b>one day</b>. So we cut the 7-day plan down to what actually moves your score:
+  <b>SQL first</b> (biggest risk), <b>your own projects second</b> (easiest wins), <b>the ECE story third</b>
+  (kills the biggest doubt). Tick items as you go — progress is saved in your browser.</p>
+
+  <div class="priority">
+    <h3>🔥 If you only do 5 things today, do these</h3>
+    <ol>
+      <li><b>Write 6 SQL queries from memory</b> — max, group-by avg, count-where-group, WHERE vs HAVING, INNER vs LEFT JOIN, dedupe (Q16–Q21).</li>
+      <li><b>Rehearse the churn project in 2 minutes</b> — problem → data → cleaning → model → 97.51% → Flask (Q8).</li>
+      <li><b>Rehearse the RAG chatbot in 2 minutes</b> — chunking → embeddings → FAISS → answer (Q13).</li>
+      <li><b>Nail the "Why ECE → data?" answer</b> 5 times out loud (Q2 + positioning story above).</li>
+      <li><b>Learn the 14 cheat-sheet words</b> — ETL, pipeline, warehouse, big data… say each in your own simple words (Section 5).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="progress-label"><span>Day progress</span><span id="prog-text">0 / 0 done</span></div>
+    <div class="progress-wrap"><div class="progress-bar" id="prog-bar"></div></div>
+
+    <div class="tl">
+      <div class="slot" data-slot="s1">
+        <div class="slot-top"><span class="time">8:00 – 8:40 AM</span><span class="tag must">Must</span><h4>Resume surgery + pitch</h4></div>
+        <ul>
+          <li>Apply the 5 resume fixes above (summary line, typos, links).</li>
+          <li>Read your resume aloud 3× — every line must have 2 min of explanation ready.</li>
+          <li>Record the 45-second pitch (Q1) on your phone. Listen once. Cut filler words.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s1"> Done — resume fixed + pitch recorded</label>
+      </div>
+
+      <div class="slot" data-slot="s2">
+        <div class="slot-top"><span class="time">8:40 – 11:00 AM</span><span class="tag must">Must</span><h4>SQL crash course — your biggest risk</h4></div>
+        <ul>
+          <li>Type Q16 (2nd highest salary), Q17 (avg per dept), Q18 (count by city) — 3 times each, no looking.</li>
+          <li>Learn Q19 WHERE vs HAVING and Q20 INNER vs LEFT JOIN until you can explain them while drawing.</li>
+          <li>Learn Q21 dedupe query logic.</li>
+          <li>If time: HackerRank SQL beginner track, 30 min only — hard stop.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s2"> All 6 queries writable from memory</label>
+      </div>
+
+      <div class="slot" data-slot="s3">
+        <div class="slot-top"><span class="time">11:00 – 12:15 PM</span><span class="tag high">High</span><h4>Python + Pandas must-knows</h4></div>
+        <ul>
+          <li>Q29 list/tuple/dict · Q30 remove duplicates · Q31 function · Q32 DataFrame + nulls · Q33 comprehension · Q34 try/except.</li>
+          <li>Open your churn notebook — be able to explain <b>every cell</b>. Re-run it if possible.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s3"> 6 Python answers + notebook re-explained</label>
+      </div>
+
+      <div class="slot" data-slot="s4">
+        <div class="slot-top"><span class="time">12:15 – 1:00 PM</span><span class="tag med">Medium</span><h4>Data words (ETL day)</h4></div>
+        <ul>
+          <li>Cheat sheet words #1–7: ETL, pipeline, warehouse, big data, cleaning, database, SQL.</li>
+          <li>Answers Q23 (ETL/pipeline), Q24 (DE vs DA vs DS), Q27 (cleaning) out loud.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s4"> Explained all 7 words to a wall (seriously — out loud)</label>
+      </div>
+
+      <div class="slot" data-slot="s5">
+        <div class="slot-top"><span class="time">1:00 – 1:45 PM</span><span class="tag break">Break</span><h4>Lunch + walk</h4></div>
+        <ul><li>No screens. Your brain consolidates the morning SQL while you rest.</li></ul>
+        <label class="ck"><input type="checkbox" data-ck="s5"> Ate + moved</label>
+      </div>
+
+      <div class="slot" data-slot="s6">
+        <div class="slot-top"><span class="time">1:45 – 4:15 PM</span><span class="tag must">Must</span><h4>Project deep-dive day (the gold)</h4></div>
+        <ul>
+          <li><b>Churn:</b> write the 6-step story (Q8) on paper — problem → data(5,630/20 features) → cleaning → EDA → XGBoost(97.51%/98.2%) → Flask. Say it in 2 min, 5 times.</li>
+          <li><b>Why XGBoost + cross-validation</b> (Q9) · <b>accuracy vs F1</b> (Q10) · <b>missing values/encoding</b> (Q11) · <b>why Flask</b> (Q12) · <b>if accuracy was 70%</b> (Q15).</li>
+          <li><b>RAG chatbot:</b> draw the flow 3× — chunking(500+ chunks) → embeddings → FAISS → generation (Q13).</li>
+          <li><b>DRDL:</b> 60-sec answer — signal processing, FPGA, systematic debugging (Q14).</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s6"> All 3 projects (churn, RAG, DRDL) told smoothly, no notes</label>
+      </div>
+
+      <div class="slot" data-slot="s7">
+        <div class="slot-top"><span class="time">4:15 – 5:15 PM</span><span class="tag high">High</span><h4>GenAI + case question</h4></div>
+        <ul>
+          <li>Q35 what is GenAI/LLM · Q36 embeddings · Q37 hallucination &amp; RAG · Q38 where PwC can use GenAI.</li>
+          <li>Practice the case (Q39): clarify → data → analyze → recommend business action.</li>
+          <li>Optional (skip if tired): guesstimate method (Q40).</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s7"> GenAI answers + case structure ready</label>
+      </div>
+
+      <div class="slot" data-slot="s8">
+        <div class="slot-top"><span class="time">5:15 – 6:45 PM</span><span class="tag must">Must</span><h4>HR answers + the ECE story</h4></div>
+        <ul>
+          <li>Q2 "Why ECE → data?" ×5 out loud · Q3 "Why PwC?" ×5 · Q4 "Why hire you?" · Q5 weakness · Q6 3-year answer · Q7 relocation.</li>
+          <li>Write each on paper once, then speak without reading. Timing goal: under 60 seconds each.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s8"> ECE story + Why PwC + Why you = automatic</label>
+      </div>
+
+      <div class="slot" data-slot="s9">
+        <div class="slot-top"><span class="time">6:45 – 7:45 PM</span><span class="tag break">Break</span><h4>Dinner + full mental off</h4></div>
+        <ul><li>Eat well. Call family. Do <b>not</b> study new topics — nothing new after this point.</li></ul>
+        <label class="ck"><input type="checkbox" data-ck="s9"> Real break, no notes in hand</label>
+      </div>
+
+      <div class="slot" data-slot="s10">
+        <div class="slot-top"><span class="time">7:45 – 9:30 PM</span><span class="tag must">Must</span><h4>Mock interview + behavioral stories</h4></div>
+        <ul>
+          <li>Grab a friend (or record yourself): pitch → 1 project → 1 SQL → 1 Python → "Why PwC?" → 2 behavioral.</li>
+          <li>Behavioral (Q41–Q44) using Situation → What I did → Result → Learned, with your 3 reuse-stories.</li>
+          <li>Pick your 2 questions to ask them (Q45).</li>
+          <li>Practice the "I don't know" script once — honesty + learning plan beats bluffing.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s10"> One full mock done + 3 stories told</label>
+      </div>
+
+      <div class="slot" data-slot="s11">
+        <div class="slot-top"><span class="time">9:30 – 10:30 PM</span><span class="tag high">High</span><h4>Final sweep + pack + sleep</h4></div>
+        <ul>
+          <li>Reread cheat sheet (Section 5) + pocket one-liners (Section 6).</li>
+          <li>Confirm interview time/link, print 2 resumes, keep ID + pen ready.</li>
+          <li>Registration submitted before 10 AM? Double-check name/PAN rule.</li>
+          <li><b>Devices off by 11 PM.</b> A tired brain loses an interview it could have won.</li>
+        </ul>
+        <label class="ck"><input type="checkbox" data-ck="s11"> Bag packed, notes closed, asleep by 11</label>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:6px; background:#FFF7ED; border-color:#FDBA8D;">
+      <h3 class="blk" style="color:#9A3412;">⏰ Time ran short? Do the fallback order</h3>
+      <p style="font-size:15px;">If you only get <b>3 hours</b>: SQL queries (45 min) → churn + RAG 2-min stories (45 min) →
+      ECE story + Why PwC + pitch (30 min) → cheat-sheet words while walking (30 min).</p>
+      <p style="font-size:15px; margin-top:8px;">If you only get <b>1 hour</b>: pitch (Q1) + ECE story (Q2) + the 6 SQL queries
+      written once + the 14 cheat-sheet words. That alone beats most unprepared candidates.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===================== Q&A ===================== -->
+<section id="qa"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">4</div><h2>Question &amp; Answer Bank (45)</h2></div>
+  <p class="lead">Every answer is in simple language — no heavy words. Tap a question to open it.
+  <b>Don't memorize word-by-word; own the idea and say it your way.</b></p>
+
+  <div class="qa-tools">
+    <button onclick="setAll(true)">Expand all</button>
+    <button onclick="setAll(false)">Collapse all</button>
+    <button onclick="setGroup('gA',true)">Open HR set</button>
+    <button onclick="setGroup('gB',true)">Open project set</button>
+  </div>
+
+  <!-- GROUP A: HR -->
+  <div class="qgroup" id="gA">
+    <h3>A. Opening / HR Questions <span class="cnt">7</span></h3>
+
+    <details class="q"><summary><span class="qn">Q1</span> "Tell me about yourself." (your 45-second pitch) <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"I'm Mahalaxmi, final-year B.Tech in Electronics and Communication at NIT Trichy, CGPA 8.29, from Kodad, Telangana.</p>
+        <p>I like taking a problem apart and understanding how it works — that's what pulled me into electronics first. Last summer I interned at DRDL Hyderabad, where I worked on signal processing and FPGA tasks using MATLAB and Vivado.</p>
+        <p>Alongside that, I taught myself data work. I built a customer churn prediction model on 5,630 customer records that reached 97.5% accuracy, and an AI chatbot that answers questions from my own documents using GenAI. I also lead guest lectures and workshops at our college fests.</p>
+        <p>This role is exactly where I want to go — real data problems, real clients, and a place like PwC where I can learn fast. That's why I applied."</p>
+        <div class="tip"><b>Delivery tip:</b> ~45 seconds. Pause slightly before "This role is exactly where I want to go" — that's your landing line.</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q2</span> "Your background is ECE. Why this IT/data role?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Honest answer — hardware was my first love. I even won 1st place in a design-thinking project with Texas Instruments. But as I went deeper, I realized what I enjoy is not the circuit itself — it's the <b>process</b>: take messy input, run it through a system, look at the results, fix what's wrong, repeat.</p>
+        <p>When I did that same process with data in my churn project, I enjoyed it even more, because the results come faster and the impact is easier to see. So I upskilled myself — Python, Pandas, SQL, and GenAI — and built two full projects without anyone forcing me. ECE didn't hold me back; it gave me strong math and a systematic mindset, which this job needs anyway."</p>
+        <div class="tip"><b>Why it stands out:</b> you don't apologize for ECE — you convert it into an advantage, and you back it with proof (two self-built projects).</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q3</span> "Why PwC?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Three reasons. One — PwC AC India works on real client problems across industries, so in 6 months I'll see more variety than at a single product company. Two — PwC is investing heavily in GenAI and digital work; I've personally built a RAG chatbot, so I want to be somewhere I can grow that skill, not park it. Three — the learning culture. I'm from ECE, so I need mentors and structure, and I read about PwC's training programs and mentorship. Also, I've coordinated workshops with external professionals at Pragyan, so I'm used to the collaborative, client-facing style of working."</p>
+        <div class="tip"><b>Rule:</b> every "why us" answer ends with something you will <i>contribute</i>, not just take.</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q4</span> "Why should we hire you?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Three reasons. One — I've already <i>done</i> what this job asks. Python, data cleaning, model building, even GenAI — you can see it in my projects, not just bullet points on paper. Two — I learn fast, on my own. I'm from ECE and still built a full Flask app and a complete chatbot pipeline by myself, just by using documentation and practice. Three — I deliver under pressure. I've run a workshop for 1,500 students with external speakers, where one missed email means the event fails. And this is not a backup plan for me — I have chosen this path, and I'll give my best for the full 6 months and beyond."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q5</span> "What is your weakness?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"I can be slow to ask for help. I like figuring things out myself first — in college that worked, but at DRDL I once spent two days stuck on a simulation issue that my mentor solved in ten minutes because he'd seen it before. So I made a rule for myself: if I'm stuck for more than two hours, I ask the right person. That one rule has saved me a lot of time.</p>
+        <p>The other area I'm still building is databases and cloud tools — I've gone deep on Python and analytics, so I'm closing that gap with daily SQL practice right now."</p>
+        <div class="tip"><b>Formula:</b> real weakness + a concrete story + the system you built to fix it. Never "I'm a perfectionist."</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q6</span> "Where do you see yourself in 3 years?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"In the first year, I want to become someone the team can hand a task to without checking on it. By year two, I want to own a small piece of a project — like the data part of a client engagement — and explain the findings to clients myself. In three years, I want to be the person who connects business questions to data answers. I know growth here is based on what you deliver, and I'm okay with that."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q7</span> "This is a 6-month internship. Bangalore/Hyderabad okay?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Yes, fully okay. I'm from Telangana and I've already done an internship away from home at DRDL, so relocation is not a problem for me. What matters to me is the work and the learning, and I'm ready to give 6 months of complete focus."</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- GROUP B: PROJECTS -->
+  <div class="qgroup" id="gB">
+    <h3>B. Project Deep-Dives (win the interview here) <span class="cnt">8</span></h3>
+
+    <details class="q"><summary><span class="qn">Q8</span> "Walk me through your churn project, end to end." <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>Always start from the <b>business problem</b>, not the code:</p>
+        <p>"<b>The problem:</b> a company is losing customers, and it's cheaper to keep an existing customer than to find a new one. So the question was — can we spot, from past data, which customers are about to leave?</p>
+        <p><b>Step 1 — Data:</b> 5,630 customer records with 20 features — satisfaction score, distance traveled, cashback, how often they complain.</p>
+        <p><b>Step 2 — Cleaning:</b> handled missing values, fixed data types, and used encoding to convert text categories — like city tier or gender — into numbers, because models only understand numbers.</p>
+        <p><b>Step 3 — Understanding the data:</b> exploratory analysis — I checked which features were actually connected to churn. Complaints and satisfaction came out strong.</p>
+        <p><b>Step 4 — Modeling:</b> I tried multiple classification models and compared them using cross-validation — I'll explain that next — and XGBoost gave the most stable and highest performance: <b>97.51% accuracy and 98.2% F1-score</b>.</p>
+        <p><b>Step 5 — Deployment:</b> I built a Flask app so a non-technical user can enter customer details and instantly get a churn-risk prediction.</p>
+        <p><b>What I learned:</b> accuracy is not the goal — a useful model that someone can actually <i>use</i> is the goal. That's why I built the app instead of stopping at the notebook."</p>
+        <div class="tip"><b>Timing:</b> 2 minutes flat. If they want details, they'll ask — that's Q9–Q12 waiting.</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q9</span> "Why XGBoost? What is cross-validation?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"I didn't pick XGBoost because it sounds fancy — I let the numbers decide. I first tried simpler models like logistic regression and a decision tree, then compared them using <b>cross-validation</b>. In plain words: I split my data into 5 parts, trained on 4 and tested on 1, and repeated this 5 times so every part got a turn as test data. This gives an average score, so the result isn't just lucky on one split. XGBoost gave the best and most stable average, so I selected it."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q10</span> "Accuracy vs F1-score? Why report F1?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Accuracy is simply — out of all predictions, how many were right. But churn data is usually uneven — far more customers stay than leave. A model can say 'everyone will stay' and still look accurate.</p>
+        <p><b>F1-score</b> balances two things: <b>precision</b> — of the customers I <i>flagged</i> as churners, how many really churned — and <b>recall</b> — of all the real churners, how many did I actually catch.</p>
+        <p>I reported both — 97.51% accuracy and 98.2% F1 — because in a real business, missing a real churner costs money."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q11</span> "How did you handle missing values and categorical data?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"For missing values, I first checked <i>why</i> they were missing — sometimes it's random, sometimes it means something. Then I either filled them with a sensible value like the median for numbers, or dropped rows only when the missing piece was too much to guess.</p>
+        <p>For categorical data — like city or gender, which are words — models need numbers, so I used encoding: one-hot encoding for categories with no order, and label encoding where there's a natural order like a tier system. The rule I followed: never let information be lost, and never make up values that change the meaning of the data."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q12</span> "What does the Flask part do? Why build it?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"The model lives inside a Python file — a normal user can't use that. Flask is a small Python tool that creates a simple web page. I connected the model to it, so a user can type in customer details — like satisfaction score and complaints — click predict, and get a risk answer like 'high chance of churn' in real time.</p>
+        <p>I built it because a model sitting in a notebook helps no one. Making it usable is what makes it <i>data engineering</i> — turning analysis into something people can actually work with."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q13</span> "Explain your RAG chatbot — chunking, embeddings, FAISS?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"The problem: I wanted a chatbot that answers questions <b>only from my own documents</b> instead of making things up from the internet. Here's how, in simple steps:</p>
+        <ol>
+          <li><b>Chunking</b> — I cut long documents into small pieces, a few hundred words each. A huge document is too much for the model at once; small pieces are easier to search. I processed over 500 chunks from 10+ documents.</li>
+          <li><b>Embeddings</b> — each chunk becomes a list of numbers that captures its <i>meaning</i>. Similar meanings get similar numbers — like giving every paragraph an address based on meaning.</li>
+          <li><b>FAISS</b> — a tool from Meta that stores these numbers and finds closest matches fast. When a user asks a question, I convert the question the same way and ask FAISS: 'which 3–4 chunks are most similar?'</li>
+          <li><b>Generation</b> — I send those chunks plus the question to the AI model, and it answers using only that context.</li>
+        </ol>
+        <p><b>Result:</b> responses stay grounded in my documents instead of the model guessing. Simple rule: give the model the right page, and it won't invent the story."</p>
+        <div class="tip"><b>Draw this flow on paper 3 times today.</b> Interviewers love candidates who can draw their system.</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q14</span> "What did you do at DRDL?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"I worked on signal-processing and digital waveform generation tasks. In plain words — I took signals, analyzed how they behave using MATLAB, built and tested designs on FPGA using Xilinx Vivado, and when simulation results didn't match what I expected, I dug into the discrepancy and fixed the design. I worked inside a structured defense environment where deadlines and accuracy both mattered, and I delivered my assigned tasks on time.</p>
+        <p>Two things I carried forward: first, systematic debugging — look at the output, find where it deviates, fix that step. I use the exact same approach when my model gives a bad score. Second, working in a formal team where you communicate progress clearly."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q15</span> "What if your model's accuracy was only 70%?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"First, I wouldn't panic and start changing the model randomly. I'd ask: <b>is 70% actually bad for this problem?</b> If 70% of customers never churn, a lazy model gets 70% for free. So I'd check the F1-score and a confusion matrix first.</p>
+        <p>Then step by step: check data quality — maybe missing values or wrong encoding are hurting it; check if important features are missing; try feature engineering — combine existing columns into more useful ones; then try different models. And finally, I'd be honest with the team about what's achievable with this data. In my churn project, this stepwise check is exactly how I moved from basic models to 97.5%."</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- GROUP C: SQL/PY -->
+  <div class="qgroup" id="gC">
+    <h3>C. SQL + Python + Core Data Basics <span class="cnt">18</span></h3>
+
+    <details class="q"><summary><span class="qn">Q16</span> SQL: second-highest salary <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"SQL is the language used to ask questions of a database — like Excel formulas, but for large tables."</p>
+<pre><button class="copy">copy</button><span class="kw">SELECT</span> <span class="kw">MAX</span>(salary) <span class="kw">FROM</span> employees
+<span class="kw">WHERE</span> salary &lt; (<span class="kw">SELECT</span> <span class="kw">MAX</span>(salary) <span class="kw">FROM</span> employees);</pre>
+        <p>"Find the max, then the max of everything <i>below</i> that. If they ask for the second <i>distinct</i> highest with ties, I'd use DENSE_RANK()."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q17</span> SQL: average salary per department <span class="caret">▼</span></summary>
+      <div class="ans">
+<pre><button class="copy">copy</button><span class="kw">SELECT</span> department, <span class="kw">AVG</span>(salary) <span class="kw">AS</span> avg_salary
+<span class="kw">FROM</span> employees
+<span class="kw">GROUP BY</span> department;</pre>
+        <p>"GROUP BY collects all rows of the same department into one group, and AVG calculates on each group."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q18</span> SQL: count churned customers by city <span class="caret">▼</span></summary>
+      <div class="ans">
+<pre><button class="copy">copy</button><span class="kw">SELECT</span> city, <span class="kw">COUNT</span>(*) <span class="kw">AS</span> churned_customers
+<span class="kw">FROM</span> customers
+<span class="kw">WHERE</span> churn = <span class="str">1</span>
+<span class="kw">GROUP BY</span> city;</pre>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q19</span> WHERE vs HAVING <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>WHERE</b> filters rows <i>before</i> grouping. <b>HAVING</b> filters <i>after</i> grouping.</p>
+        <p>Example: <code class="inl">WHERE salary &gt; 10000</code> keeps only individual high-salary rows. <code class="inl">HAVING COUNT(*) &gt; 5</code> keeps only departments with more than 5 people — you can't use COUNT per group in WHERE, because WHERE runs before the groups are formed."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q20</span> INNER JOIN vs LEFT JOIN <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>INNER JOIN</b> gives only rows that match in both tables — common customers and common orders.</p>
+        <p><b>LEFT JOIN</b> gives <i>all</i> rows from the left table, even with no match — every customer appears, and where there's no order, the order columns show NULL.</p>
+        <p>One-line memory: inner = intersection, left = everything from the left, plus matches."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q21</span> SQL: delete duplicate rows, keep one <span class="caret">▼</span></summary>
+      <div class="ans">
+<pre><button class="copy">copy</button><span class="kw">DELETE FROM</span> employees
+<span class="kw">WHERE</span> id <span class="kw">NOT IN</span> (
+  <span class="kw">SELECT MAX</span>(id) <span class="kw">FROM</span> employees
+  <span class="kw">GROUP BY</span> name, email
+);</pre>
+        <p>"Logic: for each group of identical people, keep the one with the highest id, delete the rest."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q22</span> Database vs Excel <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Excel is like a paper register — great for one person, small data. A database is like a full library system — thousands of people can read and write at the same time, it enforces rules — like no duplicate account numbers — and it can store lakhs of rows without slowing down. Excel stores files; a database stores data with structure and safety."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q23</span> What is ETL and a data pipeline? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>ETL = Extract, Transform, Load.</b></p>
+        <p><b>Extract</b> — pull raw data from different sources: a CRM export, an Excel file, an API.<br>
+        <b>Transform</b> — clean it: remove duplicates, fix dates, fill missing values, join tables.<br>
+        <b>Load</b> — put the clean data where reports and models can use it — like a data warehouse.</p>
+        <p>A <b>pipeline</b> is this whole journey set up to run automatically — like a water line from the tank to your tap. You turn it on, and clean data flows regularly without anyone manually copying files. Example: every night at 2 AM, yesterday's sales get pulled, cleaned, and loaded for the morning report."</p>
+        <div class="tip"><b>This is the #1 definition to know</b> — the role is literally "Data <i>Engineering</i> &amp; Analytics".</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q24</span> Data engineer vs analyst vs scientist? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>Data engineer</b> builds the road — the pipelines that move clean data from source to destination.</p>
+        <p><b>Data analyst</b> drives on that road and explains what happened — reports, charts, SQL queries, dashboards.</p>
+        <p><b>Data scientist</b> builds the prediction — models like my churn project that say what <i>will</i> happen.</p>
+        <p>This role sits between engineering and analytics, which is exactly why I'm interested — I'd learn to build the pipelines and also do the analysis."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q25</span> What is a data warehouse? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"A big central store where cleaned data from many systems — sales, website, support — is brought together in one place, so reports and analysis are fast and consistent. Simple analogy: a kitchen's central fridge where all ingredients are prepped and labeled, instead of everyone running to different shops."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q26</span> What is big data? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Big data means data that's too large or too fast for normal tools — think millions of transactions a day. People describe it with three V's: <b>Volume</b> (too big), <b>Velocity</b> (arriving too fast — live clicks), <b>Variety</b> (mixed types — logs, images, text). Frameworks like Spark handle it by splitting the work across many machines — like 10 friends dividing a huge assignment instead of one person doing it all."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q27</span> What is data cleaning? Why does it matter? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Data cleaning is fixing a dataset before using it: removing duplicates, handling missing values, correcting wrong formats — like a date written as '05/03' meaning different things in different countries — and fixing impossible entries, like age = 200.</p>
+        <p>Why it matters: models and reports are only as good as the input — garbage in, garbage out. In my churn project, cleaning and encoding were a big part of the work, not a small step at the start."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q28</span> What is an API? What is the cloud? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>API</b> is a waiter in a restaurant. You (one program) don't go into the kitchen (another program) — you give the waiter your order in a fixed format, and he brings back the dish. Apps use APIs to talk to each other — like a weather app calling a weather service.</p>
+        <p><b>Cloud</b> is renting computers over the internet instead of buying and maintaining your own servers. Need 10× power for a festival week? Rent it, use it, switch it off. That's why companies use AWS or Azure — no big hardware bills."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q29</span> Python: list vs tuple vs dictionary <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>List</b> — changeable and ordered, like a shopping list you can edit: <code class="inl">fruits = ['apple','banana']</code>.</p>
+        <p><b>Tuple</b> — fixed once created, like a date <code class="inl">(2026, 9, 27)</code> — you shouldn't change a date. Slightly faster, and usable as a dictionary key because it can't change.</p>
+        <p><b>Dictionary</b> — key-value pairs, like a phone book: <code class="inl">{'Mahalaxmi': 9876543210}</code> — you look up by name, not position."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q30</span> Python: remove duplicates while keeping order <span class="caret">▼</span></summary>
+      <div class="ans">
+<pre><button class="copy">copy</button>seen = <span class="kw">set</span>()
+result = []
+<span class="kw">for</span> x <span class="kw">in</span> my_list:
+    <span class="kw">if</span> x <span class="kw">not in</span> seen:
+        seen.add(x)
+        result.append(x)</pre>
+        <p>"Using a set makes lookup instant. If order didn't matter, <code class="inl">list(set(my_list))</code> is quicker to write — but it shuffles the order."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q31</span> Python: what is a function and why use one? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"A function is a named block of code you can run again and again by calling its name — like a recipe. Benefits: no repeated code, easier to test and fix in one place, and the main logic stays readable. Example: <code class="inl">def clean_data(df):</code> — I write the cleaning once and use it on any dataset."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q32</span> Pandas: DataFrame + handling nulls <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"A DataFrame is a table inside Python — like an Excel sheet with labeled rows and columns, but much faster and programmable."</p>
+<pre><button class="copy">copy</button>df = pd.read_csv(<span class="str">'customers.csv'</span>)
+df.head()                                  <span class="cm"># first 5 rows — always look before you trust</span>
+df.dropna()                                <span class="cm"># drop rows with missing values</span>
+df[<span class="str">'salary'</span>].fillna(df[<span class="str">'salary'</span>].median())  <span class="cm"># fill with median — safe for outliers</span>
+df.groupby(<span class="str">'city'</span>)[<span class="str">'churn'</span>].mean()         <span class="cm"># churn rate per city</span></pre>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q33</span> for loop vs list comprehension <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Same job, different style. A for loop is explicit; a comprehension is the one-line version."</p>
+<pre><button class="copy">copy</button><span class="cm"># for loop</span>
+squares = []
+<span class="kw">for</span> x <span class="kw">in</span> <span class="kw">range</span>(5):
+    squares.append(x*x)
+
+<span class="cm"># comprehension</span>
+squares = [x*x <span class="kw">for</span> x <span class="kw">in</span> <span class="kw">range</span>(5)]</pre>
+        <p>"I use comprehensions for simple one-line jobs, normal loops when there's real logic — readability comes first."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q34</span> What does try/except do? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"It handles errors gracefully. If something can go wrong — user types text where a number is expected — you wrap it in try, and in except you decide what happens instead of the whole program crashing. Like a fuse box: when current spikes, the fuse cuts off instead of the house burning."</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- GROUP D: GenAI -->
+  <div class="qgroup" id="gD">
+    <h3>D. GenAI Basics (your advantage) <span class="cnt">4</span></h3>
+
+    <details class="q"><summary><span class="qn">Q35</span> What is GenAI in simple words? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"GenAI is AI that <i>creates</i> new content — text, images, code — instead of just classifying or predicting. It's usually built on a large language model, or LLM. An LLM is trained on huge amounts of text and learns to predict the next word given the words before it. Step by step, word by word, that's how it writes full answers. My chatbot project uses exactly this, plus retrieval so the answers come from my documents."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q36</span> What is an embedding? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"It's a way to turn text into numbers that capture <i>meaning</i>. Similar sentences get numbers that are close together — 'how do I reset my password' and 'forgot my login passcode' land near each other, even though they share almost no words. That's why search can work on meaning, not just keyword matching."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q37</span> What is hallucination, and how does RAG reduce it? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Hallucination is when the model confidently states something that isn't true — it fills gaps with guesses. RAG reduces it by giving the model only relevant, real documents as context and asking it to answer from them. Not 100% removal — you should still check important answers — but it's the difference between an employee answering from the company manual versus from memory."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q38</span> Where can GenAI be useful at PwC? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Many practical places: summarizing long audit or contract documents before a human reads them; drafting first versions of client emails or reports so the team only edits; answering internal questions from company knowledge bases — same idea as my chatbot; and cleaning or categorizing data. I'd start with low-risk, high-time-save tasks where a human always reviews the output."</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- GROUP E: Analytical -->
+  <div class="qgroup" id="gE">
+    <h3>E. Analytical / Consulting-Style <span class="cnt">3</span></h3>
+
+    <details class="q"><summary><span class="qn">Q39</span> Case: "A client says their customers are leaving. What do you do?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Four steps.</p>
+        <ol>
+          <li><b>Clarify</b> — define 'leaving': cancellation? Inactivity for 30 days? And the time period.</li>
+          <li><b>Understand the data</b> — what do we have: transactions, support calls, complaints, app usage?</li>
+          <li><b>Analyze</b> — find when churn happens and what's common among churners: price change? complaints? competitor offers? Compare churners vs stayers feature by feature.</li>
+          <li><b>Recommend</b> — suggest what to <i>do</i>: complaints are the driver → fix support first; price → test a retention offer. And propose a simple model to flag at-risk customers weekly — exactly what my churn project does.</li>
+        </ol>
+        <p>I'd always end with: what's the business action? Analysis without action is just numbers."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q40</span> Guesstimate: ice creams sold in Durgapur on a summer Sunday <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"Let me make clear assumptions, then check if they're reasonable at the end.</p>
+        <p>Population of Durgapur: ~5 lakh. On a hot Sunday, maybe 15% go out = 75,000 people out.<br>
+        Of those, maybe 1 in 5 buys an ice cream = ~15,000. Add home purchases and parlour packs — I'd estimate roughly <b>20,000–25,000 units</b> that day.<br>
+        Sanity check: 40 shops × 500 units = 20,000 — matches. So: around 20,000–25,000, driven mostly by temperature."</p>
+        <div class="tip"><b>Method matters more than the number:</b> assumptions → math → sanity check → say what would change your answer.</div>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q41</span> You find a mistake in your report one day before submission? <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"First, quantify it — is it a typo or does it change the conclusion? Then I'd immediately tell my lead, not wait for them to find it. I'd fix it, recheck the affected numbers, and also check where the mistake came from so it doesn't repeat. I learned this at DRDL — in technical work, a small unchecked error becomes a big problem later. Hiding a mistake is the only unforgivable part; making one is normal."</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- GROUP F: Behavioral -->
+  <div class="qgroup" id="gF">
+    <h3>F. Behavioral (use Situation → What I did → Result → Learned) <span class="cnt">4</span></h3>
+
+    <details class="q"><summary><span class="qn">Q42</span> "Tell me about a time you handled a conflict / coordination failure." <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>Situation:</b> In Pragyan workshops, we had to get external companies to run technical workshops, and one confirmed speaker cancelled just days before the event.</p>
+        <p><b>What I did:</b> I made two calls in parallel — one to a backup speaker from a company we'd already contacted, and one to the team to adjust schedule and room. The public schedule didn't change at all.</p>
+        <p><b>Result:</b> The session happened on time with the backup speaker, and we delivered all planned workshops.</p>
+        <p><b>Learned:</b> always keep a backup for anything depending on an outsider, and communicate with <i>one</i> voice so no mixed messages reach participants."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q43</span> "Tell me about a time you worked under a tight deadline." <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"<b>Situation:</b> Guest lecture series where speaker confirmation, slides, and publicity all had to line up in one week — with a full academic schedule on the side.</p>
+        <p><b>What I did:</b> Broke it into daily checkpoints, assigned each person one clear ownership, and did a quick call every evening to remove blockers. When one speaker's slides came late, I arranged a rehearsal the next morning instead of waiting.</p>
+        <p><b>Result:</b> The lecture happened as announced, with zero last-day surprises.</p>
+        <p><b>Learned:</b> deadlines are met by small daily checks, not by one big push on the last day."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q44</span> "A team member isn't pulling their weight. What do you do?" <span class="caret">▼</span></summary>
+      <div class="ans">
+        <p>"First, I'd assume there's a reason — maybe the task is unclear or they're stuck. I'd talk privately and ask what's blocking them, and split the work if needed. If it continues, I'd tell my lead honestly, with facts — not complaints. In workshops, when one person had too much on their plate, simply reassigning two tasks solved it. My goal is the event, not the blame."</p>
+      </div>
+    </details>
+
+    <details class="q"><summary><span class="qn">Q45</span> "Any questions for us?" — ALWAYS ask 2 <span class="caret">▼</span></summary>
+      <div class="ans">
+        <ul>
+          <li>"What does a typical first month look like for an intern on this team — what would I be working on first?"</li>
+          <li>"For someone in this role right now, what matters more — how fast they code, or how clearly they communicate their findings?"</li>
+          <li>"What's one thing past interns did that made them stand out and get converted to FTE?"</li>
+          <li>"Where does the team use GenAI in day-to-day work today?"</li>
+        </ul>
+        <div class="tip"><b>Close with:</b> "Thank you for your time — I'm genuinely excited about this role and ready to start whenever needed."</div>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<!-- ===================== CHEAT SHEET ===================== -->
+<section id="cheat"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">5</div><h2>14-Word Cheat Sheet</h2></div>
+  <p class="lead">You must be able to explain <b>each one in plain words, out loud</b> — like you're telling a friend.
+  These words cover 90% of the "but you're from ECE…" trap questions.</p>
+  <div class="cheat">
+    <div class="word"><b>ETL</b><span>Extract, Transform, Load — pull raw data, clean it, store it somewhere useful.</span></div>
+    <div class="word"><b>Data pipeline</b><span>The automated route clean data travels from source to destination, like a water pipe.</span></div>
+    <div class="word"><b>Data warehouse</b><span>One big central store of cleaned data from many systems, made for fast reports.</span></div>
+    <div class="word"><b>Big data</b><span>Data too big/fast/mixed for normal tools — needs split-across-machines frameworks like Spark.</span></div>
+    <div class="word"><b>Data cleaning</b><span>Removing duplicates, fixing missing/wrong values before analysis. Garbage in, garbage out.</span></div>
+    <div class="word"><b>Database</b><span>Organized store of data where many users can read/write safely at once.</span></div>
+    <div class="word"><b>SQL</b><span>The query language for databases — SELECT, WHERE, GROUP BY, JOIN.</span></div>
+    <div class="word"><b>API</b><span>A defined way for two programs to talk — like a waiter between you and kitchen.</span></div>
+    <div class="word"><b>Cloud</b><span>Renting computers over the internet instead of buying your own.</span></div>
+    <div class="word"><b>LLM / GenAI</b><span>A model trained on tons of text that predicts the next word; GenAI uses it to create content.</span></div>
+    <div class="word"><b>Embedding</b><span>Turning text into numbers where similar meanings land close together.</span></div>
+    <div class="word"><b>RAG</b><span>Retrieve relevant documents first, then let the model answer from them — less guessing.</span></div>
+    <div class="word"><b>Hallucination</b><span>Model confidently saying something false; RAG + fact-checking reduce it.</span></div>
+    <div class="word"><b>Model vs accuracy</b><span>Model = the trained rule that predicts; accuracy = % of predictions right (F1 is the stricter score).</span></div>
+  </div>
+</div></section>
+
+<!-- ===================== CHECKLIST ===================== -->
+<section id="checklist"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">6</div><h2>Last-24-Hours Checklist + Day-Of Rules</h2></div>
+
+  <div class="ck-grid">
+    <div class="ck-list">
+      <h4>🕗 Tonight (before sleeping)</h4>
+      <label><input type="checkbox" data-ck="n1"> Registration submitted before 10 AM tomorrow — name per PAN, last name ".", CGPA 8.29 exact</label>
+      <label><input type="checkbox" data-ck="n2"> Resume fixes done + 2 copies printed</label>
+      <label><input type="checkbox" data-ck="n3"> Interview time / link / venue rechecked</label>
+      <label><input type="checkbox" data-ck="n4"> Pitch (Q1), Why PwC (Q3), 3 stories — one last read, nothing new</label>
+      <label><input type="checkbox" data-ck="n5"> ID + pen + notepad + charger packed</label>
+      <label><input type="checkbox" data-ck="n6"> Sleep 7+ hours — devices off by 11 PM</label>
+    </div>
+
+    <div class="ck-list">
+      <h4>🎯 If you only have 3 hours</h4>
+      <label><input type="checkbox" data-ck="f1"> 45 min — 6 SQL queries written from memory</label>
+      <label><input type="checkbox" data-ck="f2"> 45 min — churn + RAG 2-minute stories, out loud ×3</label>
+      <label><input type="checkbox" data-ck="f3"> 30 min — ECE story + Why PwC + pitch</label>
+      <label><input type="checkbox" data-ck="f4"> 30 min — 14 cheat-sheet words while walking</label>
+      <label><input type="checkbox" data-ck="f5"> Bonus if time — Q39 case structure + one mock with a friend</label>
+    </div>
+  </div>
+
+  <div class="rules" style="margin-top:16px;">
+    <h4>📋 In the interview — 7 rules</h4>
+    <ol>
+      <li><b>First 60 seconds set the tone</b> — smile, greet, wait for them to start, speak the pitch slowly.</li>
+      <li><b>Don't bluff.</b> Use this exact script if you don't know something:
+        <div class="script">"I haven't worked with that yet — I'm from ECE, so I'm being honest about my gaps.
+        But here's how I'd learn it: I'd take a small example, practice for a day or two, and apply it to my project.
+        That's how I learned FAISS and Flask for my chatbot — nobody taught me, I just built it."</div>
+        <i>This impresses more than a fake definition.</i></li>
+      <li><b>Bridge back to proof.</b> Never say "I'm good at Python" alone — add: "for example, in my churn project I did the full preprocessing and built the Flask app myself."</li>
+      <li><b>When they show SQL/code:</b> think aloud 10 seconds, write the simplest correct solution, then explain. Silence looks worse than a simple attempt.</li>
+      <li><b>Talk in steps:</b> "There are three parts to that answer — first… second… third…"</li>
+      <li><b>If pushed hard:</b> pressure is standard testing. Never argue — "That's a good point, I'd look at it that way…"</li>
+      <li><b>Close strong:</b> ask one question from Q45, then: <i>"Thank you for your time — I'm genuinely excited about this role and ready to start whenever needed."</i></li>
+    </ol>
+
+    <h4 style="margin-top:10px;">💬 Pocket one-liners</h4>
+    <div class="pocket">
+      <div><b>On being new to IT</b>"I may be new to IT, but I'm not new to learning things alone — my two projects prove that."</div>
+      <div><b>On ECE</b>"ECE taught me systems and math; data is just a different system."</div>
+      <div><b>On the 6-month run</b>"Six months is enough for me to show what I can do — and I plan to earn the FTE, not just complete the internship."</div>
+      <div><b>On VLSI vs data</b>"In VLSI I loved debugging hardware. Data gives me the same joy with faster feedback."</div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <b>Final recruiter note:</b> You are not a weak candidate — you're an <b>unfamiliar-shaped</b> candidate.
+  Your projects already answer the JD's three must-haves (Python, data, GenAI).
+  Speak about them simply, handle 6 SQL queries, tell your ECE→data story with confidence — and you will convert.
+  All the best, Mahalaxmi — go get it. 💪
+</footer>
+
+<script>
+/* ---------- Registration countdown ---------- */
+(function(){
+  const target = new Date('2026-09-23T10:00:00+05:30').getTime();
+  const el = document.getElementById('countdown');
+  function tick(){
+    const now = Date.now(), d = target - now;
+    if(d <= 0){ el.textContent = "deadline has passed — confirm your submission went through!"; return; }
+    const h = Math.floor(d/3600000), m = Math.floor(d%3600000/60000), s = Math.floor(d%60000/1000);
+    el.textContent = `only ${h}h ${m}m ${s}s left`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ---------- Checkboxes (saved in browser) ---------- */
+(function(){
+  const KEY = 'pwc-prep-checks';
+  let state = {};
+  try{ state = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ state = {}; }
+  document.querySelectorAll('[data-ck]').forEach(cb=>{
+    cb.checked = !!state[cb.dataset.ck];
+    cb.addEventListener('change', ()=>{
+      state[cb.dataset.ck] = cb.checked;
+      localStorage.setItem(KEY, JSON.stringify(state));
+      updatePlan();
+      markSlots();
+    });
+  });
+  function markSlots(){
+    document.querySelectorAll('.slot').forEach(slot=>{
+      const cb = slot.querySelector('[data-ck]');
+      slot.classList.toggle('done', cb && cb.checked);
+    });
+  }
+  function updatePlan(){
+    const planCbs = [...document.querySelectorAll('.slot [data-ck]')];
+    const done = planCbs.filter(c=>c.checked).length;
+    const total = planCbs.length;
+    document.getElementById('prog-text').textContent = `${done} / ${total} done`;
+    document.getElementById('prog-bar').style.width = (total? (done/total*100):0) + '%';
+  }
+  window.updatePlan = updatePlan;
+  markSlots(); updatePlan();
+})();
+
+/* ---------- Q&A tools ---------- */
+function setAll(open){ document.querySelectorAll('details.q').forEach(d=>d.open=open); }
+function setGroup(id, open){ document.querySelectorAll('#'+id+' details.q').forEach(d=>d.open=open); }
+
+/* ---------- Copy buttons on code blocks ---------- */
+document.querySelectorAll('pre .copy').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    e.stopPropagation();
+    const code = btn.parentElement.cloneNode(true);
+    code.querySelector('.copy')?.remove();
+    navigator.clipboard.writeText(code.textContent.trim()).then(()=>{
+      btn.textContent = 'copied ✓';
+      setTimeout(()=>btn.textContent='copy', 1500);
+    });
+  });
+});
+</script>
+</body>
+</html>
